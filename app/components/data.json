@@ -1,0 +1,54 @@
+{
+    "id": 0,
+    "first name": "André",
+    "last name": "Pereira",
+    "grade": "HighSchool, 3rd grade",
+    "achievs": {
+
+        "2016": {
+            "events": {
+                "comp1": {
+                    "sport1": 1,
+                    "sport2": 3,
+                    "sport3": 2
+                },
+                "comp2": {
+                    "sport1": 3,
+                    "sport2": 3,
+                    "sport3": 1
+                }
+            }
+        },
+        "2017": {
+            "events": {
+                "comp3": {
+                    "sport1": 1
+                },
+                "comp4": {
+                    "sport2": 2,
+                    "sport3": 3
+                }
+            }
+        }
+    },
+    "participations": [
+        "comp1",
+        "comp2",
+        "comp3",
+        "comp4"
+    ],
+    "teams": {
+        "fisical sports": [
+            "team1",
+            "team2",
+            "team3"
+        ],
+        "mental sports": [
+            "team1",
+            "team5"
+        ]
+    },
+    "thumbnail": "url...",
+    "background-image": "url..."
+
+}
