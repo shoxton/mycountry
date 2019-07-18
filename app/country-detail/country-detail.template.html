@@ -10,194 +10,142 @@
         </div>
     </div>
 </div>
-<div style="position:relative">
-    <div class="color-custom-bg"></div>
-    <div class="desktop-styled container">
-        <div class="row align-items-center">
-            <div class="col-4 text-container">
-                <div class="text row align-items-center">
-                    <img ng-src="{{vm.country.flag}}" height="32px" width="auto" style="padding-right: 10px" alt=""> <h2 class="h4 text-white">{{vm.country.name}}</h2>
-                </div>
-            </div>
-            <div class="col-8 row stats-container">
-                <div class="col-4">
-                    <div class="heading">
-                        <span>Capital</span>
-                    </div>
-                    <div class="stat-value">
-                        <span class="h6" >{{vm.country.capital}}</span>
-                    </div>
-                </div>
-                <div class="col-4 text-center">
-                    <div class="heading">
-                        <span>Language</span>
-                    </div>
-                    <div class="stat-value">
-                        <span class="h6">{{vm.country.languages[0].name}}</span>
-                    </div>
-                </div>
-                <div class="col-4 text-right">
-                    <div class="heading">
-                        <span>Region</span>
-                    </div>
-                    <div class="stat-value border-right-0">
-                        <span class="h6">{{vm.country.region}}</span>
-                    </div>
-                </div>       
-            </div>
-        </div>
-    </div>
-    <div class="container details-content-container mobile-fluid">
-        <div ng-style="{'background-image':'url(' + vm.country.flag + ')'}" class="bg-flag mobile-styled">
-            <div class="overlay-flag container-fluid">
-                <div class="row">
-                    <div class="col-12 text-container">
-                        <div class="text">
-                            <h2 class="h4 text-white">{{vm.country.name}}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid mobile-styled">
-            <div class="row stats-container">
-                <div class="col-4">
-                    <div class="heading">
-                        <span>Capital</span>
-                    </div>
-                    <div class="stat-value">
-                        <span class="h6" >{{vm.country.capital}}</span>
-                    </div>
-                </div>
-                <div class="col-4 text-center">
-                    <div class="heading">
-                        <span>Language</span>
-                    </div>
-                    <div class="stat-value">
-                        <span class="h6">{{vm.country.languages[0].name}}</span>
-                    </div>
-                </div>
-                <div class="col-4 text-right">
-                    <div class="heading">
-                        <span>Region</span>
-                    </div>
-                    <div class="stat-value border-right-0">
-                        <span class="h6">{{vm.country.region}}</span>
-                    </div>
-                </div>       
-            </div>
-        </div>
+<div ng-style="{'background-image':'url(' + vm.country.flag + ')'}" class="bg-flag">
+    <div class="overlay-flag container-fluid">
         <div class="row">
-            <div class="col-md-6">
-                <div class="map-container">
-                    <div id="map"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="section-heading">
-                    <h2 class="h4">Quick Facts</h2>
-                </div>
-                <div class="item-list-1">
-                    <div ng-click="" class="item item-1">
-                        <div class="flex-item">
-                            <div class="item-text">
-                                <h3 class="h6">Population</h3>
-                                <span>{{vm.bankData.population[0].response[1][0].value}}</span>
-                            </div>
-                            <div class="item-action">
-                                <span class="fa fa-exclamation-circle"></span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="item-expand">
-                            <ul class="list-group">
-                                <li class="list-group-item justify-content-between" ng-repeat="indicator in vm.bankData.population">
-                                    {{indicator.response[1][0].indicator.value}}
-                                    <span class="badge badge-default badge-pill">{{indicator.response[1][0].value.toFixed(2)}}</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item item-1">
-                        <div class="flex-item">
-                            <div class="item-text">
-                                <h3 class="h6">Area</h3>
-                                <span>{{vm.bankData.area[0].response[1][0].value}}
-                            </div>
-                            <div class="item-action">
-                                <span class="fa fa-exclamation-circle"></span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="item-expand">
-                            <ul class="list-group">
-                                <li class="list-group-item justify-content-between" ng-repeat="indicator in vm.bankData.area">
-                                    {{indicator.response[1][0].indicator.value}}
-                                    <span class="badge badge-default badge-pill">{{indicator.response[1][0].value.toFixed(2)}}</span>
-                                </li>
-                            </ul>            
-                        </div>  
-                    </div>
-                    <div class="item item-1">
-                        <div class="flex-item">
-                            <div class="item-text">
-                                <h3 class="h6">Time Zone</h3>
-                                <span>{{vm.country.timezones[0]}}</span>
-                            </div>
-                            <div class="item-action">
-                                <span class="fa fa-exclamation-circle"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item item-1">
-                        <div class="flex-item">
-                            <div class="item-text">
-                                <h3 class="h6">Currency</h3>
-                                <span>{{vm.country.currencies[0].name}}</span>
-                            </div>
-                            <div class="item-action">
-                                <span class="fa fa-exclamation-circle"></span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="item-expand">
-                            <ul class="list-group">
-                                <li class="list-group-item justify-content-between" ng-repeat="indicator in vm.bankData.currency">
-                                    {{indicator.response[1][0].indicator.value}}
-                                    <span class="badge badge-default badge-pill">{{indicator.response[1][0].value.toFixed(2)}}</span>
-                                </li>
-                            </ul>            
-                        </div>  
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-heading">
-            <h2 class="h4">Curiosities</h2>
-            <span class="card-text">Photos by <a href="https://unsplash.com/?utm_source=mycountry&utm_medium=referral">Unsplash</a></span>
-        </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-                <carousel-item image="image" ng-class="{active:!$index}" class="carousel-item" ng-repeat="image in vm.images"></carousel-item>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="section-heading">
-                    <h2 class="h4">News</h2>
-                </div>
-                <div class="item-list-1">
-                    <news-item item="item" ng-repeat="item in vm.news | limitTo:5 "></news-item>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="section-heading">
-                    <h2 class="h4">Related Countries</h2>
-                </div>
-                <div class="item-list-1">
-                    <border-country-item border="country" ng-repeat="country in vm.borders"></border-country-item>
+            <div class="col-12 text-container">
+                <div class="text">
+                    <h2 class="h4 text-white">{{vm.country.name}}</h2>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="container-fluid">
+    <div class="row stats-container">
+        <div class="col-4">
+            <div class="heading">
+                <span>Capital</span>
+            </div>
+            <div class="stat-value">
+                <span class="h6 text-grey" >{{vm.country.capital}}</span>
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <div class="heading">
+                <span>Language</span>
+            </div>
+            <div class="stat-value">
+                <span class="h6 text-grey">{{vm.country.languages[0].name}}</span>
+            </div>
+        </div>
+        <div class="col-4 text-right">
+            <div class="heading">
+                <span>Region</span>
+            </div>
+            <div class="stat-value border-right-0">
+                <span class="h6 text-grey">{{vm.country.region}}</span>
+            </div>
+        </div>       
+    </div>
+</div>
+<div class="map-container">
+    <div id="map"></div>
+</div>
+<div class="section-heading">
+    <h2 class="h4">Quick Facts</h2>
+</div>
+<div class="item-list-1">
+    <div ng-click="" class="item item-1">
+        <div class="flex-item">
+            <div class="item-text">
+                <h3 class="h6">Population</h3>
+                <span>{{vm.bankData.population[0].response[1][0].value}}</span>
+            </div>
+            <div class="item-action">
+                <span class="fa fa-exclamation-circle"></span>
+            </div>
+        </div>
+        <hr>
+        <div class="item-expand">
+            <ul class="list-group">
+                <li class="list-group-item justify-content-between" ng-repeat="indicator in vm.bankData.population">
+                    {{indicator.response[1][0].indicator.value}}
+                    <span class="badge badge-default badge-pill">{{indicator.response[1][0].value.toFixed(2)}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="item item-1">
+        <div class="flex-item">
+            <div class="item-text">
+                <h3 class="h6">Area</h3>
+                <span>{{vm.bankData.area[0].response[1][0].value}}
+            </div>
+            <div class="item-action">
+                <span class="fa fa-exclamation-circle"></span>
+            </div>
+        </div>
+        <hr>
+        <div class="item-expand">
+            <ul class="list-group">
+                <li class="list-group-item justify-content-between" ng-repeat="indicator in vm.bankData.area">
+                    {{indicator.response[1][0].indicator.value}}
+                    <span class="badge badge-default badge-pill">{{indicator.response[1][0].value.toFixed(2)}}</span>
+                </li>
+            </ul>            
+        </div>  
+    </div>
+    <div class="item item-1">
+        <div class="flex-item">
+            <div class="item-text">
+                <h3 class="h6">Time Zone</h3>
+                <span>{{vm.country.timezones[0]}}</span>
+            </div>
+            <div class="item-action">
+                <span class="fa fa-exclamation-circle"></span>
+            </div>
+        </div>
+    </div>
+    <div class="item item-1">
+        <div class="flex-item">
+            <div class="item-text">
+                <h3 class="h6">Currency</h3>
+                <span>{{vm.country.currencies[0].name}}</span>
+            </div>
+            <div class="item-action">
+                <span class="fa fa-exclamation-circle"></span>
+            </div>
+        </div>
+        <hr>
+        <div class="item-expand">
+            <ul class="list-group">
+                <li class="list-group-item justify-content-between" ng-repeat="indicator in vm.bankData.currency">
+                    {{indicator.response[1][0].indicator.value}}
+                    <span class="badge badge-default badge-pill">{{indicator.response[1][0].value.toFixed(2)}}</span>
+                </li>
+            </ul>            
+        </div>  
+    </div>
+</div>
+<div class="section-heading">
+    <h2 class="h4">Curiosities</h2>
+    <span class="card-text">Photos by <a href="https://unsplash.com/?utm_source=mycountry&utm_medium=referral">Unsplash</a></span>
+</div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <carousel-item image="image" ng-class="{active:!$index}" class="carousel-item" ng-repeat="image in vm.images"></carousel-item>
+    </div>
+</div>
+<div class="section-heading">
+    <h2 class="h4">News</h2>
+</div>
+<div class="item-list-1">
+    <news-item item="item" ng-repeat="item in vm.news | limitTo:5 "></news-item>
+</div>
+<div class="section-heading">
+    <h2 class="h4">Related Countries</h2>
+</div>
+<div class="item-list-1">
+    <border-country-item border="country" ng-repeat="country in vm.borders"></border-country-item>
 </div>
