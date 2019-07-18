@@ -1,0 +1,14 @@
+<form class="navbar-form container" role="search">
+    <div class="input-group add-on">
+        <input autocomplete="off" ng-model="vm.query" class="form-control query-input" placeholder="Search" name="srch-term" id="srch-term" type="text">
+        <div class="input-group-btn">
+            <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+    </div>
+</form>
+<div class="container">
+    <div class="row">
+        <country-list-item country="country" ng-repeat="country in vm.countries | filter:vm.query" class="col-6 col-sm-6 col-md-3 d-flex align-items-stretch">
+        </country-list-item>
+    </div>
+</div>
